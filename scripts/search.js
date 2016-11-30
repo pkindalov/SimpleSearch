@@ -5,12 +5,25 @@ const userpass = "123";
 const base64 = btoa(username + ":" + userpass);
 const authHeaders = {"Authorization":"Basic " + base64};
 
+// let buttonClose = $('<div id="close"><button id="closeButton" type="button" onclick="closeResults(this)">X</button></div>');
+// $('#results').prepend(buttonClose);
+
+$(document).ready(function () {
+
+    $('#results').hide();
+    $('#closeButton').hide();
+});
+
 
 function search() {
+    $('#results').hide();
+
     let wordForSearch = $('input[name=keyword]').val();
     let valid = validateWord(wordForSearch);
 
     if(valid){
+        $('#results').fadeIn(4000);
+        $('#closeButton').fadeIn(4000);
         let loadingDiv = $('<div class="loading">Loading</div>');
         $('#results').append(loadingDiv);
 
@@ -55,7 +68,9 @@ function search() {
     function renderView(searchResult, container) {
         if(searchResult.length == 0){
             let divNoResults = $('<div class="nothingFound"></div>').text("Sorry :( Nothing found. Try another word");
-            container.append(divNoResults);
+                container.append(divNoResults);
+
+
         }
         for(let obj of searchResult){
 
@@ -92,5 +107,11 @@ function search() {
 
         return true;
         
+    }
+
+
+    function closeResults(button) {
+        $('#results').fadeOut(3000);
+        $(button).fadeOut(3000);
     }
 
