@@ -1,0 +1,47 @@
+#formWrapper, #results, .resultDiv{
+    border: 1px solid #9999CC;
+    border-radius: 5px;
+    background: #9999CC;
+    color: #f5f5f5;
+    padding: 5px;
+    width: 19%;
+}
+
+#formWrapper input{
+    padding-right: 5px;
+}
+
+#results{
+    border-radius: 5px;
+    width: 50%;
+    margin-top: 3%;
+    height: auto;
+}
+
+.resultDiv{
+    background: #6600FF;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    padding-left: 5px;
+    width: 98%;
+}
+
+.title, .description, .author{
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.author{
+    border-bottom: 1px solid lightgray;
+}
+
+.description{
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.nothingFound{
+    color: red;
+}
